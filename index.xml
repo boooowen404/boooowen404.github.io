@@ -1,23 +1,22 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>我的全新 Hugo 网站</title>
+        <title>Bowen&#39;s Blog</title>
         <link>https://boooowen404.github.io/</link>
-        <description>我的全新 Hugo 网站</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 02 Oct 2022 21:47:31 &#43;0800</lastBuildDate>
+        <description>Bowen&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Wed, 05 Oct 2022 12:37:31 &#43;0800</lastBuildDate>
             <atom:link href="https://boooowen404.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>First_post123</title>
-    <link>https://boooowen404.github.io/posts/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</link>
-    <pubDate>Sun, 02 Oct 2022 21:47:31 &#43;0800</pubDate><author>
-        <name>作者</name>
-    </author><guid>https://boooowen404.github.io/posts/%E6%B5%8B%E8%AF%95%E6%96%87%E7%AB%A0/</guid>
-    <description><![CDATA[]]></description>
+    <title>关于这里</title>
+    <link>https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/</link>
+    <pubDate>Wed, 05 Oct 2022 12:37:31 &#43;0800</pubDate><author>
+                        <name>bowen</name><uri>https://boooowen404.github.io/authors/bowen</uri></author><guid>https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/</guid>
+    <description><![CDATA[技术这里会放很多技术相关的文章，有整理好的技术学习笔记、心得，也会有杂乱的调试、问题记录，还可能会有一些自动驾驶&amp;机器人行业的相关知]]></description>
 </item><item>
-    <title>First_post3</title>
-    <link>https://boooowen404.github.io/posts/first_post2/</link>
-    <pubDate>Sun, 02 Oct 2022 21:47:31 &#43;0800</pubDate><author>
-        <name>作者</name>
-    </author><guid>https://boooowen404.github.io/posts/first_post2/</guid>
-    <description><![CDATA[]]></description>
+    <title>Markdown 基本语法</title>
+    <link>https://boooowen404.github.io/posts/markdown%E6%A0%BC%E5%BC%8F/</link>
+    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate><author>
+                        <name>DoIt</name><uri>https://boooowen404.github.io/authors/doit</uri></author><guid>https://boooowen404.github.io/posts/markdown%E6%A0%BC%E5%BC%8F/</guid>
+    <description><![CDATA[<p>这篇文章引用自DoIt主题示例</p>
+<p>提供了可以在 Hugo 的文章中使用的基本 Markdown 语法示例.</p>]]></description>
 </item></channel>
 </rss>
