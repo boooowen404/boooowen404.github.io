@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">Ntrip介绍 - Bowen&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="Ntrip介绍" />
+<meta property="og:description" content="是什么？NTRIP（ Networked Transport of RTCM via Internet Protocol）是一种通讯协议，也指基于NTRIP协议的为用户定位终端提供定位服务的网络 有什么用？随着 GP" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://boooowen404.github.io/posts/ntrip/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-23T23:37:31+08:00" />
+<meta property="article:modified_time" content="2022-10-23T23:37:31+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Ntrip介绍"/>
+<meta name="twitter:description" content="是什么？NTRIP（ Networked Transport of RTCM via Internet Protocol）是一种通讯协议，也指基于NTRIP协议的为用户定位终端提供定位服务的网络 有什么用？随着 GP"/>
+<meta name="application-name" content="Bowen&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Bowen&#39;s Blog">
+
+<meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://boooowen404.github.io/posts/ntrip/" /><link rel="prev" href="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Ntrip介绍",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/boooowen404.github.io\/posts\/ntrip\/"
+        },"genre": "posts","keywords": "GNSS","wordcount":  2765 ,
+        "url": "https:\/\/boooowen404.github.io\/posts\/ntrip\/","datePublished": "2022-10-23T23:37:31+08:00","dateModified": "2022-10-23T23:37:31+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                        "@type": "Person",
+                        "name": "bowen"                    
+                    }],"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme); document.documentElement.style.setProperty('color-scheme', theme === 'light' ? 'light' : 'dark');}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let metaColors = {'light': '#f8f8f8','dark': '#252627','black': '#000000'}
+        getMeta('theme-color').content = metaColors[document.body.getAttribute('theme')];
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Bowen&#39;s Blog">Bowen&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 标签 </a><a class="menu-item" href="/categories/"> 分类 </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-desktop">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-desktop" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-desktop" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Bowen&#39;s Blog">Bowen&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="搜索文章标题或内容..." id="search-input-mobile">
+                        <a href="#" onclick="return false;" class="search-button search-toggle" id="search-toggle-mobile" title="搜索">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="#" onclick="return false;" class="search-button search-clear" id="search-clear-mobile" title="清空">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="#" onclick="return false;" class="search-cancel" id="search-cancel-mobile">
+                        取消
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">标签</a><a class="menu-item" href="/categories/" title="">分类</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Ntrip介绍</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://boooowen404.github.io/authors/bowen'>bowen</a></span>
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/gnss/"><i class="far fa-folder fa-fw"></i>GNSS</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-23">2022-10-23</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-10-23">2022-10-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 2765 字&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="true">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#是什么">是什么？</a></li>
+        <li><a href="#有什么用">有什么用？</a></li>
+        <li><a href="#原理是什么">原理是什么？</a></li>
+        <li><a href="#ntrip网络的组成是什么">Ntrip网络的组成是什么？</a></li>
+        <li><a href="#有什么优点">有什么优点：</a></li>
+        <li><a href="#ntripclient访问ntripcaster步骤">NtripClient访问NtripCaster步骤</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="是什么" class="headerLink">
+    <a href="#%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>是什么？</h3><p>NTRIP（ Networked Transport of RTCM via Internet Protocol）是一种通讯协议，也指基于NTRIP协议的为用户定位终端提供定位服务的网络</p>
+<h3 id="有什么用" class="headerLink">
+    <a href="#%e6%9c%89%e4%bb%80%e4%b9%88%e7%94%a8" class="header-mark"></a>有什么用？</h3><p>随着 GPRS、CDMA、3G 技术的发展，高传输率、高宽带、覆盖范围广的无线传输通讯方式成为 GPS 实时差分数据的的一种方式。国际上，通常采用 Ntrip（NetWorked  Transport  of  RTCM  via  Internet  Protocol）协议来实现 CORS（Continues  Operation  Reference  System）观测站和用户之间差分数据的无线传输。</p>
+<h3 id="原理是什么" class="headerLink">
+    <a href="#%e5%8e%9f%e7%90%86%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>原理是什么？</h3><p>它的基础是 HTTP网络通用协议，建立在网络 TCP / IP 协议基础之上。Ntrip 协议由德国制图与测地学联邦代理处( the Federal Agency for Cartography and Geodesy of Germany，简称 BKG)发起，得到了 RTCM 委员会认证。Ntrip 网络管理模式使得 CORS 系统建设变得简单，保证了 CORS 系统运行的安全、可靠和用户的权益。</p>
+<h3 id="ntrip网络的组成是什么" class="headerLink">
+    <a href="#ntrip%e7%bd%91%e7%bb%9c%e7%9a%84%e7%bb%84%e6%88%90%e6%98%af%e4%bb%80%e4%b9%88" class="header-mark"></a>Ntrip网络的组成是什么？</h3><p>Ntrip 网络主要由 3 个部分组成：Ntrip 客户端（Ntrip Client）、Ntrip 服务器（Ntrip Server）和 Ntrip 处理中心（NtripCaster）。这里的 Ntrip 客户端和 Ntrip 服务器都只相当于 HTTP 连接中的客户端，Ntrip 处理中心才是响应它们的服务处理器。</p>
+<p><a class="lightgallery" href="/images/Ntrip/1.png" title="1" data-thumbnail="/images/Ntrip/1.png">
+        <img
+            class="lazyload"
+            data-src="/images/Ntrip/1.png"
+            data-srcset="/images/Ntrip/1.png, /images/Ntrip/1.png 1.5x, /images/Ntrip/1.png 2x"
+            data-sizes="auto"
+            alt="/images/Ntrip/1.png">
+    </a></p>
+<p>在 CORS 网络中，Ntrip Client 是指接收 RTK 数据流的用户站设备，Ntrip Client 使用 Ntrip Caster 分配的 IP 地址通过互联网连接到 NtripCaster。Ntrip Server 这部分用于从 GPS 参考站网络得到 Ntrip Caster 传输的 RTK 数据。在CORS 系统中 Ntrip  服务器（硬件）通常是运行 CORS 系统管理软件的计算机。Ntrip 服务器给产生不同差分数据格式的数据源（Ntrip Source）分配一个节点名（mountpoint），Ntrip  处理中心就将多个节点名列表制成源列表(Source Table)  。Ntrip Client 访问请求 NtripCaster 分配的 IP 地址时就可以收到这张源列表，根据源列表的信息，客户可以自由选择自己需要的数据格式。</p>
+<h4 id="总结如下" class="headerLink">
+    <a href="#%e6%80%bb%e7%bb%93%e5%a6%82%e4%b8%8b" class="header-mark"></a>总结如下：</h4><ul>
+<li>NtripSource：用来产生GPS差分数据，并把差分数据提交给NtripServer</li>
+<li>NtripServer：负责把GPS差分数据提交给NtripCaster</li>
+<li>NtripCaster：差分数据中心，负责接收、发送GPS差分数据</li>
+<li>NtripClient：登录NtripCaster后，NtripCaster把GPS差分数据发送给它</li>
+</ul>
+<p><a class="lightgallery" href="/images/Ntrip/2.png" title="2" data-thumbnail="/images/Ntrip/2.png">
+        <img
+            class="lazyload"
+            data-src="/images/Ntrip/2.png"
+            data-srcset="/images/Ntrip/2.png, /images/Ntrip/2.png 1.5x, /images/Ntrip/2.png 2x"
+            data-sizes="auto"
+            alt="/images/Ntrip/2.png">
+    </a></p>
+<p>NtripSource和NtripServer一般已经集成到一台GPS基准站内，GPS基准站产生差分数据（扮演着NtripSource的角色），然后再通过网络发送给NtripCaster（扮演着NtripServer的角色）。</p>
+<p>（Ntripsource定义唯一的sourceID，并称为挂载点（mountpoint））</p>
+<p>NtripSource 和 NtripServer也可以分开：GPS基准站产生差分数据，然后通过串口发送给一个程序，这个程序再把差分数据发送给NtripCaster。这里GPS基准站扮演着NtripSource的角色，程序扮演着NtripServer的角色。</p>
+<p>NtripCaster一般就是一台固定IP地址的服务器，它负责接收、发送差分数据。</p>
+<p><strong>给NtripClient发送差分数据时有两种方案</strong>：一是直接转发NtripSource产生的差分数据；二是通过解算多个NtripSource的差分数据，为NtripClient产生一个虚拟的基准站（即VRS）。</p>
+<p>NtripClient一般就是GPS流动站。登录NtripCaster后，发送自身的坐标给NtripCaster。NtripCaster选择或产生差分数据，然后发送给NtripClient。这样GPS流动站即可实现高精度的差分定位。</p>
+<h3 id="有什么优点" class="headerLink">
+    <a href="#%e6%9c%89%e4%bb%80%e4%b9%88%e4%bc%98%e7%82%b9" class="header-mark"></a>有什么优点：</h3><p>Ntrip 网络具有如下优势：
+(1)   Ntrip  协议是一种公开的标准协议，   NtripClient 、 Ntrip Server 和Ntrip Caster 应用程序都可以在网络上下载，数据处理中心、用户端只要支持 Ntrip控件，就能按照 Ntrip 协议规定进行差分数据传输；
+(2)    Ntrip  协议可以传输不同格式的数据，  除 RTCM 数据外，  CMR、FKP、MAX 等各种数据只要遵循 Ntrip 的管理规定都可以进行传输；
+(3)    Ntrip 网络将 CORS 系统的各个组成部分分成独立而又能有效连接的部分。CORS 系统的参考站可以选用不同的接收机，系统数据处理软件也可以不尽相同，不同处理软件都可以充当 Ntrip Server 的角色，处理得到的差分源数据按照 Ntrip  协议规定作为 Ntrip Caster 中不同的节点，客户访问网络时就可以根据 Ntrip Caster 的路径指引很快地和需要的数据节点建立连接。这种作业模式，使得不同区域、不同 CORS 技术网络的资源都可以在 internet 网络中共享，用户直接面对的是 Ntrip Caster，而不需要关心 CORS 系统的内部运作；</p>
+<p>(4)    CORS 网络通过 Ntrip  进行工作，  用户访问 CORS 网络就和访问一个Internet 网络页面那么简单。用户根据数据中心给的 IP 地址和端口，就很容易收到 Ntripcaster 制定的源列表信息，从源列表中就可以选定自己需要的格式的数据，直接和提供该数据的节点建立联系；
+(5)   Ntrip 网络允许多用户同时访问；
+(6)   Ntrip 网络管理时需要用户使用合法的用户名和密码，NtripClient 只有以合法身份才能连接到 Ntrip Caster。这样能提供网络安全性，并预防非注册用户进入到数据处理中心收发数据，保护数据服务器的数据。而且通过用户管理，数据处理中心就可以很方便地知道哪个流动站已经登陆和在线时长，可以依此信息进行收费。</p>
+<h3 id="ntripclient访问ntripcaster步骤" class="headerLink">
+    <a href="#ntripclient%e8%ae%bf%e9%97%aentripcaster%e6%ad%a5%e9%aa%a4" class="header-mark"></a>NtripClient访问NtripCaster步骤</h3><p>NtripClient访问NtripCaster一般有两个目的</p>
+<ul>
+<li>获取源列表</li>
+<li>获取差分数据</li>
+</ul>
+<h4 id="获取源列表" class="headerLink">
+    <a href="#%e8%8e%b7%e5%8f%96%e6%ba%90%e5%88%97%e8%a1%a8" class="header-mark"></a>获取源列表</h4><p>源列表指的是差分数据数量、格式等，我的理解为获取差分数据列表，以便从中选择自己需要的</p>
+<p>步骤如下：</p>
+<ol>
+<li>
+<p>与NtripCaster建立TCP连接</p>
+</li>
+<li>
+<p>给NtripCaster发送请求</p>
+</li>
+<li>
+<p>NtripCaster返回状态数据和当前时刻等数据，然后断开TCP连接</p>
+</li>
+</ol>
+<h4 id="获取差分数据" class="headerLink">
+    <a href="#%e8%8e%b7%e5%8f%96%e5%b7%ae%e5%88%86%e6%95%b0%e6%8d%ae" class="header-mark"></a>获取差分数据</h4><p>NtripCaster给NtripClient发送差分数据时分两种情况：</p>
+<ol>
+<li>直接转发NtripSource产生的差分数据。在这种情况下，NtripClient只要指定挂载点即可；</li>
+<li>通过解算多个NtripSource的差分数据，为NtripClient产生一个虚拟的基准站。在这种情况下，NtripClient不仅要指定挂载点，还要发送自身的坐标给NtripCaster，NtripCaster根据这个坐标才能产生虚拟基准站。</li>
+</ol>
+<p>不同情况下NtripClient需要给NtripCaster发送的数据不同，需要的数据在NtripCaster获取源列表步骤中发送的数据内。</p>
+<p>获取差分数据的过程如下：</p>
+<ol>
+<li>
+<p>与NtripCaster建立TCP连接</p>
+</li>
+<li>
+<p>给NtripCaster发送请求，包括用户名、密码等</p>
+</li>
+<li>
+<p>NtripCaster返回状态数据和当前时刻等数据，然后断开TCP连接</p>
+</li>
+<li>
+<p>给NtripCaster发送GGA数据(从接收机NMEA中获取)，有的挂载点不需要发送该数据</p>
+</li>
+<li>
+<p>NtripCaster收到GGA数据后，将给NtripClient发送差分数据。</p>
+</li>
+</ol>
+<p>比较好的文章：</p>
+<p><a href="https://blog.csdn.net/mayue_web/article/details/121020565" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/mayue_web/article/details/121020565</a></p>
+</div>
+
+        
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 2022-10-23</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="https://boooowen404.github.io/posts/ntrip/" data-title="Ntrip介绍" data-hashtags="GNSS"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://boooowen404.github.io/posts/ntrip/" data-title="Ntrip介绍"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Evernote" data-sharer="evernote" data-url="https://boooowen404.github.io/posts/ntrip/" data-title="Ntrip介绍"><i class="fab fa-evernote fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/gnss/">GNSS</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/%E7%AE%80%E4%BB%8B/" class="prev" rel="prev" title="关于这里"><i class="fas fa-angle-left fa-fw"></i>关于这里</a></div>
+</div>
+<div id="comments"></div></article></div>
+        </main></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="回到顶部">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/fuse/fuse.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/tablesort/tablesort.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js" defer></script></div>
+
+<div class="pjax-assets"><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":10},"comment":{},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"distance":100,"findAllMatches":false,"highlightTag":"em","ignoreFieldNorm":false,"ignoreLocation":false,"isCaseSensitive":false,"location":0,"maxResultLength":10,"minMatchCharLength":2,"noResultsFound":"没有找到结果","snippetLength":50,"threshold":0.3,"useExtendedSearch":false},"sharerjs":true,"table":{"sort":true}};</script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js" defer></script><script type="text/javascript" src="/lib/katex/auto-render.min.js" defer></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js" defer></script><script type="text/javascript" src="/lib/katex/mhchem.min.js" defer></script><script type="text/javascript" src="/js/katex.min.js" defer></script><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/katex/copy-tex.min.css">
+        <noscript><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"></noscript></div>
+</body>
+
+</html>

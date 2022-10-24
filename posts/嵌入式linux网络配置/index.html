@@ -5,39 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noodp" />
-    <title class="pjax-title">关于这里 - Bowen&#39;s Blog</title><meta name="Description" content="关于这个网站和作者."><meta property="og:title" content="关于这里" />
-<meta property="og:description" content="关于这个网站和作者." />
+    <title class="pjax-title">嵌入式Linux网络配置 - Bowen&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="嵌入式Linux网络配置" />
+<meta property="og:description" content="可以使用NetworkManager服务 简介： NetworkManager由一个管理系统网络连接、并且将其状态通过D-BUS（是一个提供简单" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2022-10-05T12:37:31+08:00" />
-<meta property="article:modified_time" content="2022-10-05T12:37:31+08:00" />
+<meta property="og:url" content="https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" /><meta property="article:section" content="posts" />
+
+
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="关于这里"/>
-<meta name="twitter:description" content="关于这个网站和作者."/>
+<meta name="twitter:title" content="嵌入式Linux网络配置"/>
+<meta name="twitter:description" content="可以使用NetworkManager服务 简介： NetworkManager由一个管理系统网络连接、并且将其状态通过D-BUS（是一个提供简单"/>
 <meta name="application-name" content="Bowen&#39;s Blog">
 <meta name="apple-mobile-web-app-title" content="Bowen&#39;s Blog">
 
 <meta name="theme-color" content="#f8f8f8"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" /><link rel="prev" href="https://boooowen404.github.io/posts/markdown%E6%A0%BC%E5%BC%8F/" /><link rel="next" href="https://boooowen404.github.io/posts/ntrip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" /><link rel="next" href="https://boooowen404.github.io/posts/ntrip/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "关于这里",
+        "headline": "嵌入式Linux网络配置",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/boooowen404.github.io\/posts\/%E7%AE%80%E4%BB%8B\/"
-        },"genre": "posts","wordcount":  207 ,
-        "url": "https:\/\/boooowen404.github.io\/posts\/%E7%AE%80%E4%BB%8B\/","datePublished": "2022-10-05T12:37:31+08:00","dateModified": "2022-10-05T12:37:31+08:00","publisher": {
+            "@id": "https:\/\/boooowen404.github.io\/posts\/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE\/"
+        },"genre": "posts","keywords": "Linux, Config","wordcount":  342 ,
+        "url": "https:\/\/boooowen404.github.io\/posts\/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE\/","publisher": {
             "@type": "Organization",
             "name": ""},"authors": [{
                         "@type": "Person",
                         "name": "bowen"                    
-                    }],"description": "关于这个网站和作者."
+                    }],"description": ""
     }
     </script></head>
 
@@ -110,37 +110,40 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">关于这里</h1><div class="post-meta">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">嵌入式Linux网络配置</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://boooowen404.github.io/authors/bowen'>bowen</a></span>
-                </span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-10-05">2022-10-05</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2022-10-05">2022-10-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 207 字&nbsp;
+                </span>&nbsp;<span class="post-category">收录于 </span>&nbsp;<span class="post-category">类别 <a href="/categories/linux/"><i class="far fa-folder fa-fw"></i>Linux</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="0001-01-01">0001-01-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;约 342 字&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;预计阅读 1 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="true">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#技术">技术</a></li>
-        <li><a href="#非技术">非技术</a></li>
-        <li><a href="#关于我">关于我</a></li>
-        <li><a href="#版权">版权</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content"><h3 id="技术" class="headerLink">
-    <a href="#%e6%8a%80%e6%9c%af" class="header-mark"></a>技术</h3><p>这里会放很多技术相关的文章，有整理好的技术学习笔记、心得，也会有杂乱的调试、问题记录，还可能会有一些自动驾驶&amp;机器人行业的相关知识、新闻。</p>
-<h3 id="非技术" class="headerLink">
-    <a href="#%e9%9d%9e%e6%8a%80%e6%9c%af" class="header-mark"></a>非技术</h3><p>这里也会放很多自己的思考，或想说的话，有框架的，或没框架的，系统的，或杂乱的，观点，意见，想法，仅作为记录，部分文章会同步发到知乎上。</p>
-<h3 id="关于我" class="headerLink">
-    <a href="#%e5%85%b3%e4%ba%8e%e6%88%91" class="header-mark"></a>关于我</h3><p>一个致力于探索机器人&amp;自动驾驶技术的萌新工程师。</p>
-<h3 id="版权" class="headerLink">
-    <a href="#%e7%89%88%e6%9d%83" class="header-mark"></a>版权</h3><p>这里的文章属于私人分享，如果需要转载请评论联系作者，谢谢。</p>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><div class="details admonition warning open">
+                <div class="details-summary admonition-title">
+                    <i class="icon fas fa-exclamation-triangle fa-fwwarning"></i>警告<i class="details-icon fas fa-angle-right fa-fw"></i>
+                </div>
+                <div class="details-content">
+                    <div class="admonition-content">
+                        本文最后更新于 <span class="timeago" datetime="0001-01-01T00:00:00" title="January 1, 0001">0001-01-01</span>，文中内容可能已过时。</div>
+                </div>
+            </div><p>可以使用<strong>NetworkManager服务</strong></p>
+<p>简介：</p>
+<p>NetworkManager由一个管理系统网络连接、并且将其状态通过D-BUS（是一个提供简单的应用程序互相通讯的途径的自由软件项目，它是做为freedesktoporg项目的一部分来开发的）进行报告的后台服务，以及一个允许用户管理网络连接的客户端程序。</p>
+<p>说人话的简介：</p>
+<p>一个管理网络的服务</p>
+<p>命令：</p>
+<p>配置IP(重启仍然生效)：</p>
+<pre tabindex="0"><code>nmcli con add con-name &#34;static-eth0&#34; ifname eth0 type ethernet ip4 10.28.9.115/22 gw4 10.28.9.1
+nmcli con up &#34;static-eth0&#34; iface eth0
+</code></pre><p>第一句是新增一个”connection/con“绑定到eth0上，并且配置IP，子网掩码和网关？网关有什么用？</p>
+<p>这里子网掩码是用？格式表示的，22代表255.255.252.0，24代表255.255.255.0</p>
+<p>&ldquo;static-eth0&quot;是网络名称</p>
+<p>看这篇文章：</p>
+<p><a href="https://blog.csdn.net/weixin_40543283/article/details/83374388" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/weixin_40543283/article/details/83374388</a></p>
 </div>
 
         
@@ -149,26 +152,26 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>更新于 2022-10-05</span>
+                <span>更新于 0001-01-01</span>
             </div>
             <div class="post-info-license"></div>
         </div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" data-title="关于这里"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" data-title="关于这里"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Evernote" data-sharer="evernote" data-url="https://boooowen404.github.io/posts/%E7%AE%80%E4%BB%8B/" data-title="关于这里"><i class="fab fa-evernote fa-fw"></i></a></span>
+                <span><a href="#" onclick="return false;" title="分享到 Twitter" data-sharer="twitter" data-url="https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-title="嵌入式Linux网络配置" data-hashtags="Linux,Config"><i class="fab fa-twitter fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 微博" data-sharer="weibo" data-url="https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-title="嵌入式Linux网络配置"><i class="fab fa-weibo fa-fw"></i></a><a href="#" onclick="return false;" title="分享到 Evernote" data-sharer="evernote" data-url="https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/" data-title="嵌入式Linux网络配置"><i class="fab fa-evernote fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">Linux</a>,&nbsp;<a href="/tags/config/">Config</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/">主页</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/markdown%E6%A0%BC%E5%BC%8F/" class="prev" rel="prev" title="Markdown 基本语法"><i class="fas fa-angle-left fa-fw"></i>Markdown 基本语法</a>
+    <div class="post-nav">
             <a href="/posts/ntrip/" class="next" rel="next" title="Ntrip介绍">Ntrip介绍<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"></div></article></div>

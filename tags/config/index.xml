@@ -1,0 +1,13 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Config - 标签 - Bowen&#39;s Blog</title>
+        <link>https://boooowen404.github.io/tags/config/</link>
+        <description>Config - 标签 - Bowen&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><atom:link href="https://boooowen404.github.io/tags/config/" rel="self" type="application/rss+xml" /><item>
+    <title>嵌入式Linux网络配置</title>
+    <link>https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</link>
+    <pubDate>Mon, 01 Jan 0001 00:00:00 &#43;0000</pubDate><author>
+                        <name>bowen</name><uri>https://boooowen404.github.io/authors/bowen</uri></author><guid>https://boooowen404.github.io/posts/%E5%B5%8C%E5%85%A5%E5%BC%8Flinux%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE/</guid>
+    <description><![CDATA[可以使用NetworkManager服务 简介： NetworkManager由一个管理系统网络连接、并且将其状态通过D-BUS（是一个提供简单]]></description>
+</item></channel>
+</rss>
